@@ -6,11 +6,8 @@ import sys
 def runButton():
     print('У меня у самого нет(')
 
-def runButton2():
-    print('Крутой')
 
-
-def mainApp():
+def mainApp(self):
     app = QApplication(sys.argv)
     windows = QMainWindow()
 
@@ -26,18 +23,11 @@ def mainApp():
     kek.move(450, 170)
     kek.setText('Получить')
     kek.setFixedWidth(300)
-    kek.clicked.connect(runButton)
-
-    chebyr = QtWidgets.QPushButton(windows)
-    chebyr.move(600, 240)
-    chebyr.setText('Узнай кто ты?')
-    chebyr.setFixedWidth(300)
-    chebyr.clicked.connect(runButton2)
-
+    self.runButton.clicked.connect(self.runButton)
 
     windows.show()
     sys.exit(app.exec_())
 
-runButton2()
 runButton()
 mainApp()
+
